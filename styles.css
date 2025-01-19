@@ -1,0 +1,175 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and font styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    animation: slideIn 2s ease-out;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hero .button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero .button:hover {
+    transform: scale(1.1);
+}
+
+/* Memory section */
+#memories {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#memories h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Memory Gallery */
+.memory-gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.memory {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 1s ease-in-out, transform 0.3s ease-in-out;
+    margin: 20px;
+    width: 30%;
+    max-width: 300px;
+    position: relative;
+}
+
+.memory img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.memory p {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Animation for memory items */
+.memory.fade-in {
+    opacity: 1;
+}
+
+.memory.bounce {
+    transform: scale(1.05);
+}
+
+/* Confetti animation */
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+.confetti {
+    position: absolute;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: confetti-fall linear infinite;
+    pointer-events: none;
+}
+
+/* Footer section */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 1.2rem;
+}
+
+footer p {
+    margin-top: 10px;
+}
+
+/* Hero text animation */
+@keyframes slideIn {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .memory-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .memory {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
